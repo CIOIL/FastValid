@@ -9,9 +9,6 @@
     "paths": {
       "fast-valid": [
         "dist/fast-valid"
-      ],
-      "json-rules-engine": [
-        "projects/fast-valid/node_modules/json-rules-engine"
       ]
     },
     "noImplicitOverride": true,
