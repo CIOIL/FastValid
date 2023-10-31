@@ -1,4 +1,4 @@
-name: Node.js Package
+name: Register package with NPM
 
 on:
   release:
