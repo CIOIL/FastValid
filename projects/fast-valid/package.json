@@ -19,6 +19,11 @@
   "keywords": [
     "fast-valid"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public",
+    "tag": "latest"
+  },
   "author": "https://github.com/orgs/IsraelTaxAuthority",
   "license": "LGPL-3.0-only"
 }
