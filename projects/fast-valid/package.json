@@ -1,5 +1,5 @@
 {
-  "name": "@israeltaxauthority/fast-valid",
+  "name": "@cioil/fast-valid",
   "description": "A library designed to simplify writing complex validations for forms",
   "version": "1.0.0",
   "peerDependencies": {
