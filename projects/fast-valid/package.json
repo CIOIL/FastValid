@@ -1,0 +1,19 @@
+{
+  "name": "@israeltaxauthority/fast-valid",
+  "description": "A library designed to simplify writing complex validations for forms",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^16.1.0",
+    "@angular/core": "^16.1.0",
+    "json-rules-engine": "^6.4.2"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "fast-valid"
+  ],
+  "author": "https://github.com/orgs/IsraelTaxAuthority",
+  "license": "LGPL-3.0-only"
+}

@@ -1,0 +1,51 @@
+<p>contact-details required example</p>
+
+<section>
+    <div [formGroup]="contactDetails" class="form-group">
+        <div>
+            <label for="">Phone</label>
+            <input class="form-control" type="text" formControlName="phone">
+          
+        </div>
+
+       {{phone.errors|json}}
+
+        <div *ngIf="phone.errors && phone.errors['contactDetailsRequired']"  class="invalid-feedback">
+            חובה להכניס לפחות אמצעי יצירת קשר אחד
+        </div>
+         <div *ngIf="phone.errors && phone.errors['pattern']" class="error">
+           ספרות בלבד
+        </div>  
+
+        <div>
+            <label for="">Phone 2</label>
+            <input type="text" class="form-control" formControlName="phone2">
+
+        </div>
+
+        <div *ngIf="phone.errors && phone.errors['contactDetailsRequired']" class="error">
+            חובה להכניס לפחות אמצעי יצירת קשר אחד
+        </div>
+         <div *ngIf="phone2.errors && phone2.errors['pattern']" class="error">
+           ספרות בלבד
+        </div>  
+
+      
+
+        <div>
+            <label for="">Cellphone</label>
+            <input type="text" class="form-control" formControlName="cellphone">
+
+        </div>
+
+        <div *ngIf="phone.errors && phone.errors['contactDetailsRequired']" class="error">
+            חובה להכניס לפחות אמצעי יצירת קשר אחד
+        </div>
+         <div *ngIf="cellphone.errors && cellphone.errors['pattern']" class="error">
+           ספרות בלבד
+        </div>  
+
+
+    </div>
+</section>
+<hr>

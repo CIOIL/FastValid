@@ -1,0 +1,131 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "fast-valid": {
+      "projectType": "library",
+      "root": "projects/fast-valid",
+      "sourceRoot": "projects/fast-valid/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/fast-valid/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/fast-valid/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/fast-valid/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/fast-valid/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "fast-valid-demo-app": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/fast-valid-demo-app",
+      "sourceRoot": "projects/fast-valid-demo-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/fast-valid-demo-app",
+            "index": "projects/fast-valid-demo-app/src/index.html",
+            "main": "projects/fast-valid-demo-app/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/fast-valid-demo-app/tsconfig.app.json",
+            "assets": [
+              "projects/fast-valid-demo-app/src/favicon.ico",
+              "projects/fast-valid-demo-app/src/assets"
+            ],
+            "styles": [
+              "projects/fast-valid-demo-app/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "fast-valid-demo-app:build:production"
+            },
+            "development": {
+              "browserTarget": "fast-valid-demo-app:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "fast-valid-demo-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/fast-valid-demo-app/tsconfig.spec.json",
+            "assets": [
+              "projects/fast-valid-demo-app/src/favicon.ico",
+              "projects/fast-valid-demo-app/src/assets"
+            ],
+            "styles": [
+              "projects/fast-valid-demo-app/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  }
+}

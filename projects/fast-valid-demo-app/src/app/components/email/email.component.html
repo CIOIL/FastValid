@@ -1,0 +1,29 @@
+<p>sample-email</p>
+<section>
+    <div [formGroup]=emailForm class="form-group">
+        <div class="form-control">
+            <label for="">Email</label>
+            <input type="text" formControlName="email">
+          
+        </div>
+        <div>error list:  {{emailForm.controls.email.errors|json}}</div>
+        <div *ngIf="emailForm.controls.email.errors && emailForm.controls.email.errors['required']"  class="error">
+            חובה להכניס כתובת מייל
+        </div>
+
+        <div class="form-control">
+            <label for="">Confirm Email</label>
+            <input type="text" formControlName="emailConfirm">
+
+        </div>
+        <div>error list:  {{emailForm.controls.emailConfirm.errors|json}} </div>
+
+        <div *ngIf="emailForm.controls.emailConfirm.errors && emailForm.controls.emailConfirm.errors['emailNotMatch']" class="error">
+            כתובת מייל לא תואמת
+        </div>
+
+    </div>
+</section>
+<hr>
+<p>data inside the form</p>
+{{emailForm.value|json}} 
