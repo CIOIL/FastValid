@@ -5,10 +5,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FastValidModule } from 'fast-valid';
 
 import { AppComponent } from './app.component';
+import { ContactsComponent } from './components/contacts/contacts.component';
+import { EmailComponent } from './components/email/email.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ContactsComponent,
+    EmailComponent
   ],
   imports: [
     BrowserModule,

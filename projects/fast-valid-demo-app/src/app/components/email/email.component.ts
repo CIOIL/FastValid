@@ -21,7 +21,8 @@ export class EmailComponent implements OnInit {
 
   ngOnInit(): void {
     this.emailForm.valueChanges.subscribe(res => {
-      this.fastValidService.rulesEngineRun(emailRules, this.emailForm);
+      this.fastValidService.loadRules(emailRules)
+      this.fastValidService.rulesEngineRun(this.emailForm);
     });
   }
 }
