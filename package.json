@@ -4,8 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "build:fast-valid": "ng build fast-valid",
+    "build": "ng build fast-valid",
     "watch": "ng build --watch --configuration development",
     "test": "ng test fast-valid --no-watch --no-progress --browsers=ChromeHeadless"
   },
