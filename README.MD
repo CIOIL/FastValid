@@ -28,7 +28,7 @@ To install the library, run the following command in your Angular project's root
 
 `npm i @cioil/fast-valid`
 
-### import FastValid module into @NgModule imports
+### import FastValid module into @NgModule and to your component
 
 ```typescript
 import { FastValidModule } from 'fast-valid';
@@ -44,11 +44,13 @@ import { FastValidModule } from 'fast-valid';
 ```
 
 Inject FastValidService in the components that host the form
+
 ```typescript
   constructor(private fastValidService: FastValidService) { }
 ```
 
 Register the validation engine on your form (on every chage, for example):
+
 ```typescript
 ngOnInit(): void {
     this.fastValidService.loadRules(contactDetailsRules);
@@ -63,19 +65,18 @@ ngOnInit(): void {
 You can either import rules in JSON format or define them as hardcoded JavaScript objects. Even without pre-defined rules, you can still initialize the Rules Engine.
 
 ### Usage
- 
+
 - define the Rule in a Json format or JS object
 - inside your angular component initialize the Rules Engine ,pass the relevant rules for the specific form
  and call it whatever you want
- - call the Engine inside Observable pipe
-
+- call the Engine inside Observable pipe
 
 ### Defining rules Example
 
 define the rule . the $ sign is the define main root object path  
 to learn more bout how to define rules read the Json rule Engine Docs.
 
-```
+```typescript
   import { RuleProperties} from 'json-rules-engine'
   const emailMatch = {
     conditions: {
@@ -104,19 +105,17 @@ to learn more bout how to define rules read the Json rule Engine Docs.
   export const emailRules: RuleProperties[] = [emailMatch];
 ```
 
-
 ## Documentation
-first - for understand the base rules-engine see in their repo 
+
+first - for understand the base rules-engine see in their repo
  [json-rules-engine](https://github.com/CacheControl/json-rules-engine)  
 see in documentations and example folder in ths repo
 
-
 ## Acknowledgments
-
 
 Our deepest appreciation goes to the creators of the original library. Their significant contributions have been instrumental in shaping our tailored solution.
 
-# ROADMAP
+## ROADMAP
 
 now we have the ability to run validation on angular forms array but we dont have the ability to response the array index with teh error.
 we want to add the ability to add the validation error in the accurate  array index.
@@ -124,10 +123,3 @@ we want to add the ability to add the validation error in the accurate  array in
 ## Contributions
 
 Feel free to contribute, report issues, or share your feedback to help us improve "json-rules-engine-angular-ITA". We appreciate your support!
-
-## License
-
-This project is licensed under the MIT License - see the [ISC](https://www.isc.org/licenses/) file for details.
-
-
-
