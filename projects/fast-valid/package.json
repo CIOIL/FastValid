@@ -1,7 +1,7 @@
 {
   "name": "@cioil/fast-valid",
   "description": "A library designed to simplify writing complex validations for forms",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "peerDependencies": {
     "@angular/common": "^16.1.0",
     "@angular/core": "^16.1.0",
